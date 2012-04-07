@@ -1,0 +1,30 @@
+# Copyright (c) 2011 Gennadiy Shafranovich
+# Licensed under the MIT license
+# see LICENSE file for copying permission.
+
+# DEBUG flags for django
+DEBUG = True
+TEMPLATE_DEBUG = True
+
+# static url serving
+SERVE_STATICS = True
+
+# database setup, the default engine is MYSQL
+DATABASE_NAME = 'frano'
+DATABASE_USER = 'root'
+DATABASE_PASSWORD = ''
+DATABASE_HOST = 'localhost'
+DATABASE_PORT = '3306'
+
+# Email settings
+EMAIL_HOST = 'smtp.myhost.com'
+EMAIL_PORT = '25'
+EMAIL_HOST_USER ='myapp@mydomain.com'
+EMAIL_HOST_PASSWORD = 'my_super_secure_password'
+EMAIL_USE_TLS = True
+
+# secret key of deployment
+SECRET_KEY = ''
+
+# janrain engage api key
+JANRAIN_API_KEY = ''
