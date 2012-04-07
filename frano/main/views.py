@@ -52,27 +52,29 @@ def feedback(request):
   return render_page('feedback.html', request)
 
 def login(request):
-  token = None
-  if request.method == 'POST':
-    token = request.POST.get('token')
-    
-  else:
-    token = request.GET.get('token')
-    
-  if token == None:
-    return redirect("/demo.html?loginFailed=true")
+#  token = None
+#  if request.method == 'POST':
+#    token = request.POST.get('token')
+#    
+#  else:
+#    token = request.GET.get('token')
+#    
+#  if token == None:
+#    return redirect("/demo.html?loginFailed=true")
   
   u = None
   try:
-    u = urlopen('https://rpxnow.com/api/v2/auth_info?apiKey=%s&token=%s' % (JANRAIN_API_KEY, token))
-    auth_info = json.loads(u.read())
-    status = auth_info['stat']
-    if status != 'ok':
-      return redirect("/demo.html?loginFailed=true")
-    
-    profile = auth_info['profile']
-    identifier = profile['identifier']
-    email = profile['email'] if profile.has_key('email') else None
+#    u = urlopen('https://rpxnow.com/api/v2/auth_info?apiKey=%s&token=%s' % (JANRAIN_API_KEY, token))
+#    auth_info = json.loads(u.read())
+#    status = auth_info['stat']
+#    if status != 'ok':
+#      return redirect("/demo.html?loginFailed=true")
+#    
+#    profile = auth_info['profile']
+#    identifier = profile['identifier']
+#    email = profile['email'] if profile.has_key('email') else None
+    identifier = 123
+    email = 'andy@plasticcube.com'
     candidate = User.objects.filter(open_id = identifier)
     user = None
     portfolio = None
