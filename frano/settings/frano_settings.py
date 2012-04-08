@@ -10,6 +10,7 @@ TEMPLATE_DEBUG = True
 SERVE_STATICS = True
 
 # database setup, the default engine is MYSQL
+DATABASE_ENGINE = 'mysql'
 DATABASE_NAME = 'frano'
 DATABASE_USER = 'root'
 DATABASE_PASSWORD = ''
