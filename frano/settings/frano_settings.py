@@ -10,12 +10,24 @@ TEMPLATE_DEBUG = True
 SERVE_STATICS = True
 
 # database setup, the default engine is MYSQL
-DATABASE_ENGINE = 'mysql'
-DATABASE_NAME = 'frano'
-DATABASE_USER = 'root'
-DATABASE_PASSWORD = ''
-DATABASE_HOST = 'localhost'
-DATABASE_PORT = '3306'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+		'NAME': 'frano',
+		'USER': 'root',
+		'PASSWORD': '',
+		'HOST': 'localhost',
+		'PORT': '3306',
+    }
+}
+
+#DATABASE_ENGINE = 'mysql'
+#DATABASE_NAME = 'frano'
+#DATABASE_USER = 'root'
+#DATABASE_PASSWORD = ''
+#DATABASE_HOST = 'localhost'
+#DATABASE_PORT = '3306'
 
 # Email settings
 EMAIL_HOST = 'smtp.myhost.com'
