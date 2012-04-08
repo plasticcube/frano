@@ -9,8 +9,18 @@ BUILD_VERSION = '0.12'
 BUILD_DATETIME = datetime.datetime(2011, 9, 27, 7, 44, 0)
 
 # base db set up, the rest is in environment specific setting files
-DATABASE_ENGINE = 'mysql'
-DATABASE_OPTIONS = { "init_command" : "SET storage_engine=INNODB" }
+#DATABASE_ENGINE = 'mysql'
+#DATABASE_OPTIONS = { "init_command" : "SET storage_engine=INNODB" }
+
+DATABASES = {
+    'default': {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'frano',
+ 	'USER': 'root',
+ 	'PASSWORD': '',
+ 	'HOST': 'localhost',
+ 	'PORT': '3306'    }
+}
 
 # locale set up
 TIME_ZONE = 'America/New_York'
@@ -18,7 +28,10 @@ LANGUAGE_CODE = 'en-us'
 USE_I18N = False
 
 # template set up
-TEMPLATE_LOADERS = ( 'django.template.loaders.app_directories.load_template_source', )
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader'
+)
 TEMPLATE_DIRS = ( )
 TEMPLATE_CONTEXT_PROCESSORS =  ( 
     'django.core.context_processors.request', 
